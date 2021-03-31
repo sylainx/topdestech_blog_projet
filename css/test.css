@@ -1,0 +1,792 @@
+/* classes utilitaires */
+:root{
+    --rougePrincipal: #aa3911;
+    --rougeClair: #c0542d;
+    --grisPale: #616161;
+    --grisPale2: rgb(126, 126, 126);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+li{
+    list-style-type: none;
+}
+
+h1,h2,h3,h4,h5{
+    color: inherit;
+}
+/* fin classes utilitaires */
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;    
+    color: rgb(78, 78, 78);
+}
+/* ------------------ HEADER ---------------- */
+header{
+    position: sticky;
+    top: 0;    
+    text-align: right;
+    background: lightgray;
+    height: fit-content;
+    color: var(--rougePrincipal);
+    z-index: 3;
+    padding: 10px 0;
+    box-shadow: 0px 0px 3px black;
+}
+
+header .tt,
+header #toggler,
+header .hamburger{
+    display:none;
+}
+
+.header h1 a:hover{
+    /* annuler le soulignement */
+    text-decoration: none; 
+}
+
+header .logo{
+    float: left;
+}
+
+header .logo h1{
+    padding: 10px;
+}
+
+header nav li{
+    margin-right: 2rem;
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 25px;
+    transition: all ease-in-out 0.5s;
+}
+
+header nav li:hover{ 
+    background: var(--rougeClair);
+    color: white;
+    border-radius: 5px;
+    padding: 8px 15px;
+}
+
+/* ---------- sous nav ----------------- */
+
+.sous-nav{
+    background: url('../images/banniere-top-des-tech.png')
+    center -70px/cover;
+    background-attachment: fixed;
+    height: 40vh;
+
+}
+
+/* ------------------ MAIN ---------------- */
+
+.main{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    background: rgb(230, 230, 230);
+    padding: 0 20px;
+    padding-bottom:20px;
+}
+
+
+.main > h1{
+    text-align: center;
+    padding: 1.4rem ;
+    color: var(--rougePrincipal);
+}
+
+/*----------- articles a la une ----------*/
+
+.main .la-une{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* -- section - liste article -- */
+
+.la-une .lister-articles {
+    margin: 0.5rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.8) ;
+}
+
+    /* gestion des positionnements */
+.la-une-gauche{
+    flex: 4;
+}
+.la-une-centre{
+    flex: 5;
+}
+.la-une-droite{
+    flex: 4;
+}
+
+.la-une .lister-articles img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.la-une .lister-articles .titre-article{
+    padding-left: 10px;
+}
+.la-une .lister-articles .categ,
+.la-une .lister-articles .apercu-article{
+    padding: 10px;
+}
+
+.la-une .lister-articles .categ{
+    background: rgb(158, 6, 6);
+    width: fit-content;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 8px;
+    color: white;
+    font-weight: 600;
+}
+
+/*------- - articles actualités -------*/
+
+/* -- section - liste article -- */
+.main .actualites{ 
+    max-width: 975px;
+    margin: 0px auto;
+}
+
+.actualites .lister-articles {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 3px 5px rgba(99, 99, 99, 0.8);
+    margin: 1rem 0.5rem;
+}
+
+.actualites .lister-articles .img-actu{ 
+    width: 40%;
+}
+.actualites .lister-articles img{
+    width: 200px;
+    border-radius: 5px 0 0 5px;
+}
+
+.actualites .text-actu{
+    margin: 10px;
+    text-align: justify;    
+}
+.actualites .text-actu h2{
+    margin-bottom: 0.5rem;
+}
+.actualites .text-actu p{
+    font-style: italic;
+}
+
+/* ----- articles populaires -----------*/
+
+.populaires{
+    display: flex;
+}
+
+/* -- section - liste article -- */
+
+.populaires .lister-articles {
+    flex: 1;
+    border-radius: 10px;
+    /* border: 0.3px solid rgba(99, 99, 99, 0.8); */
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 3px 5px rgba(99, 99, 99, 0.8);
+    margin: 1rem 0.5rem;
+}
+
+.populaires .lister-articles img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.populaires .lister-articles .titre-article{
+    padding-left: 10px;
+}
+.populaires .lister-articles .categ,
+.populaires .lister-articles .apercu-article{
+    padding: 10px;
+}
+
+.populaires .lister-articles .categ{
+    background: rgb(158, 6, 6);
+    width: fit-content;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 8px;
+    color: white;
+    font-weight: 600;
+}
+
+/* ---------- Nombre de pages ---------- */
+.qte-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 25rem;
+    margin: 5px auto;
+    padding: 0.7rem;
+    border: 5px solid var(--rougeClair);
+}
+.qte-page p{
+    color: white;
+    font-weight: 600;
+    background: var(--rougePrincipal);
+    padding: 0.3rem;
+    margin: 0 0.2rem;    
+}
+
+
+
+
+    /* ------------------ FOOTER ---------------- */
+.footer{
+    background: rgb(59, 59, 59);
+    padding: 1rem 2rem;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1.5rem;
+}  /* marge aux titres */
+.footer > div h3{
+    margin-bottom: 1.2rem;
+    border-bottom: 1px groove white;
+    padding-bottom: 0.15rem;
+    width: fit-content;
+}
+/* 1ere colonne */
+
+.footer > div:first-child input{
+    width: 90%;
+    margin-bottom: 1.2rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 5px;
+}
+.footer > div:first-child input:focus{
+    outline: none;
+}
+.footer > div:first-child input[type='submit']{
+    background: #aa3911;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.footer > div:first-child input[type='submit']:hover{
+    background: rgb(22, 22, 22);
+}
+
+    /* 2eme colonne */
+.footer > div:nth-child(2) li{
+    border-bottom: 1px dotted rgb(95, 95, 95);
+    padding: 0.4rem 0;
+}
+
+    /* 3eme colonne */
+.footer > div:nth-child(3) li{
+    border-bottom: 1px dotted rgb(95, 95, 95);
+    padding: 0.4rem 0;
+}
+    
+    /* 4eme colonne */
+.footer > div:nth-child(4) p{
+    border-bottom: 1px dotted rgb(95, 95, 95);
+    padding: 0.4rem 0;
+}
+
+.footer > div:nth-child(4) .social ul{
+    display: flex;
+    justify-content: space-around;
+    margin-top: .4rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.8rem;
+    animation: all 0.3s ease-in-out 1s;
+}
+.footer > div:nth-child(4) .social ul li a:hover{
+    transform: scale(1.1);
+    color: var(--rougePrincipal);
+}
+
+
+    /* 5eme */
+.footer > div:last-child{
+    text-align: center;
+    grid-column: 1 / span 4;
+    background: rgb(31, 31, 31);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+    /* -------------------------- */
+            /* PAGE ARTICLE */
+    /* ----------------------------- */
+.main .page-article{
+    padding-top: 1rem;
+    display: flex;    
+}
+        
+.main .article{
+    padding: 0px 50px;
+}
+.main .article .titre-article{
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: var(--rougePrincipal);
+}
+.main .article :nth-child(2){
+    font-weight: 600;
+    font-style: italic;
+}
+
+.main .article .image-article{
+    width: 100%;
+}
+
+.main .article .image-article img{
+    width: 100%;
+}
+
+.main .article h2,
+.main .article h3{
+    margin: 1rem;
+    font-size: 2rem;
+}
+
+.main .article p{
+    text-align: justify;
+}
+
+    /* ----------- aside ----------- */
+.main .aside{
+    min-width: 300px;
+    max-width: 370px;
+    padding-left: 10px;
+}
+
+/* barre de recherche */
+.aside .barre-rechercher{    
+    /*marge pour détacher le reste du contenu*/
+    margin-bottom: 20px; 
+}
+.aside .barre-rechercher input{
+    width: 96%; /* laisse un peu d'espace pour la loupe*/
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+.aside .barre-rechercher i{
+    /* marge par pour se positionner a l'intérieur de l'input*/
+    margin: -30px;  
+    font-size: 20px; /* augementation size*/
+    padding-top: 15px ;  /*mieux placer dans le conteneur*/
+}
+
+        /* ---- catégorie ---- */
+.aside .categories{
+    background:white ;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px; 
+    box-shadow: 1px 3px 2px white;
+
+}
+
+.aside hr{
+    margin: 5px 0px; /*ligne séparatrice*/
+}
+
+.aside .categories h1{
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 3px; /* espace avec la bordure*/
+}
+.aside .categories li{
+    padding: 10px 0px;
+}
+
+/* ------- Articles populaires ------- */
+.aside .pop-articles{
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+}
+    /* titre article populaire */
+.aside .pop-articles h1{
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 3px; /* espace avec la bordure*/
+}
+
+/* corps */
+.aside .pop-articles li a{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.aside .pop-articles p{
+    font-size: 12px;
+}
+.aside .pop-articles a .pop-num{    
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    padding-right: 10px;
+}
+
+.aside .pop-articles ul li a .pop-apercu p:hover{
+    text-decoration: none;
+}
+
+    /* contenus reseaux sociaux */
+.aside .contenus-sociaux{
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px; 
+    box-shadow: 1px 3px 2px white;
+}
+
+.aside .contenus-sociaux h1{
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 3px; /* espace avec la bordure*/
+}
+
+
+    /* commentaires */
+.commentaire{
+    max-width: 50%;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    background: var(--grisPale);
+    line-height: 1.7;
+    margin: 2rem auto 2rem 5%;
+    margin-top: 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 3px 6px var(--grisPale2);
+}
+.commentaire legend{
+    padding: 0.1rem 0.3rem;
+    font-weight: 600;
+    border: 2px solid var(--rougePrincipal);
+    border-radius: 5px;
+    background: var(--rougePrincipal);
+}
+.commentaire > form input{
+    border:  none;
+    border-radius: 5px;
+    padding: 0.2rem;    
+}
+.commentaire> form input:focus{
+    outline: none;
+}
+
+    /* label nom */
+.commentaire > form .input-nom{
+    width: 100%;
+    display: block;
+}
+.commentaire > form .input-nom label{
+    font-weight: 600;
+}
+
+    /* label textarea */
+.commentaire > form label[for='text-comment']{
+    width: 100%;
+    height: 15vh;
+}
+
+.commentaire> form textarea{
+    width: 100%;
+    overflow: auto;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+.commentaire> form textarea:focus{
+    outline: none;
+}
+
+/* bouton commenter */
+.commentaire > form .bouton-com{
+    display: flex;
+    justify-content: space-evenly;
+}
+.commentaire > form .bouton-com input{
+    width: 50%;
+    padding:0.6rem;
+    margin: 1rem 0.8rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+    /* bouton submit */
+.commentaire > form .bouton-com input[type="submit"]{
+    background: var(--rougePrincipal);
+    color: white;
+}
+.commentaire > form .bouton-com input[type="submit"]:hover{
+    background: var(--rougeClair);
+
+}
+    /* bouton annuler */
+.commentaire > form .bouton-com input[type="reset"]{
+    background: var(--grisPale2);
+    color: white;
+    min-width: 106.58px;
+}
+.commentaire > form .bouton-com input[type="reset"]:hover{
+    background: var(--grisPale2);
+}
+
+    /* -------------------- A PROPOS -------------------- */
+
+.main .apropos{
+    text-align: center;
+}
+
+.main .membres {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+    /* bienvenue */
+.main .welcome{
+    margin: 2rem 4rem;
+}
+.main .welcome h2{
+    color: var(--rougePrincipal);
+    width: 70%;
+    font-size: 1.8rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid;
+    margin: 0.5rem auto;
+}
+.main .welcome p{
+    margin: 0.5rem;
+    font-style: italic;
+}
+
+/* notre mission */
+.main .mission {
+    border: 1px dashed var(--rougePrincipal);
+    padding: 0.9rem;
+    margin: 2rem 4rem;
+    
+}
+.main .mission h2{
+    color: var(--rougeClair);
+    width: 60%;
+    font-size: 2rem;
+    margin: 0.5rem auto;
+}
+
+    /* membres de l'equipe */
+.main .membres .personnage{
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px var(--grisPale);
+}
+
+.main .membres .personnage img{
+    width: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.main .membres .personnage h3{
+    padding: 0.5rem;
+}
+.main .membres .personnage p{
+    padding: 0 .5rem 0.5rem;
+}
+
+
+
+    /* ---------------------------------- */
+            /* medias queries */
+    /* ---------------------------------- */
+@media screen and (max-width:768px){
+
+    /*----------  index page ----------*/
+    
+    /* cacher le titre et le menu  */
+    header h1{
+        opacity: 0;
+        display: none;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    /* faire apparaitre */
+    header .logo .tt{
+        display: block;
+        opacity: 1;
+    }
+    header .hamburger{
+        display: block;
+        font-size: 3rem;
+    }
+
+    /*  */
+    #toggler:checked + .nav{
+        display: block;
+        background: var(--rougePrincipal);
+        /* background: royalblue; */        
+        margin: 2rem;
+    }
+
+    .nav ul li{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        border-radius: 5px;
+    }
+
+
+    /* banniere */
+
+    .sous-nav{
+        background-size: contain;
+        height: 10vh;
+    }
+
+    /*----------------- main ----------------- */
+
+    /* images a la une */
+    .main .la-une{
+        flex-direction: column;
+    }
+
+    /* images populaires */
+    .main .populaires{
+        flex-direction: column;
+    }
+
+    /* actualites */
+    .actualites .lister-articles {
+        flex-direction: column;    
+        border-radius: 5px 5px 0px 0px;    
+    }
+    .actualites .lister-articles .img-actu{
+        width: 100%;
+    }
+
+    .actualites .lister-articles img{
+        width: 100%;
+    }
+
+    /* ---------- footer ------------- */
+    .footer{
+        grid-template-columns: 1fr;
+    }
+
+    .footer > div:first-child{
+        text-align: center;
+    }
+
+    .footer > div:last-child{
+        grid-column: 1;
+    }
+
+    /* ---------------------------- */
+        /* page d'article */
+    /* ----------------------------- */
+
+    .main .page-article{
+        flex-direction: column;
+    }
+
+            
+    .main .article{
+        padding: 0px 10px;
+    }
+            
+    .main .article .titre-article{
+        font-size: 2.2rem;
+    }
+
+    .main .article :nth-child(2){
+        margin-bottom: 0.5rem;
+    }
+
+    .main .article .image-article{
+        margin-top:1rem;
+    }
+
+    /* aside */
+    .main .aside{
+        margin-top: 1rem;
+        min-width:200px;
+        padding-left: 0px;
+    }
+
+    .commentaire{
+        margin: 0px;
+        margin-top: 1rem;
+        min-width:230px;
+        line-height: 1.5;
+        padding: 0.2rem;
+    }
+
+    .commentaire> form textarea{
+        padding: 0.2rem;
+    }
+
+    .commentaire > form .bouton-com input{
+        padding: 0.3rem;
+        margin: 0.5rem 0.6rem;
+    }
+
+    /* A propos */
+    .main .welcome,
+    .main .mission {
+        margin:1rem 0.2rem;
+    }
+
+    .main .welcome h2{
+        width: 100%;
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+
+    .main .membres{
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .main .membres .personnage{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
